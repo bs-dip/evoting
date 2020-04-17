@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Evoting Admin</title>
+
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <h1>E-voting Admin</h1>
+
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab-control" checked />
+    <input type="radio" id="tab2" name="tab-control" />
+    <input type="radio" id="tab3" name="tab-control" />
+    <ul>
+      <li title="Create Elections">
+        <label for="tab1" role="button"><br /><span>Create Elections</span></label>
+      </li>
+      <li title="Register Address">
+        <label for="tab2" role="button"><br /><span>Register Address</span></label>
+      </li>
+      <li title="Ban Address">
+        <label for="tab3" role="button">
+          <br /><span>Ban Address</span></label>
+      </li>
+    </ul>
+
+    <div class="content">
+      <section>
+        <h2>Create Elections</h2>
+        <section id="header-container">
+          <br></br>
+          <div>
+            <label>Election name:</label><br>
+            <input type="text" id="election_name" value="Test Elections"><br>
+            <label>Duration(seconds):</label><br>
+            <input type="text" id="duration_seconds" value="3600"><br>
+            <label>Candidates, line by line:</label>
+            <textarea id="candidates_list" rows="4" cols="50">cand 1&#13;&#10;cand 2</textarea>
+            <button class="button-create" onclick="App.CreateElections()">Create Elections</button>
+          </div>
+        </section>
+      </section>
+      <section>
+        <h2>Register Voter</h2>
+        <section id="header-container">
+          <br></br>
+          <div>
+            <label>Address:</label><br>
+            <input type="text" id="voter_address" style="min-width: 350px;" value=""><br>
+            <label>Voter pool id(>0):</label><br>
+            <input type="text" id="voter_pool_id" value="1">
+            <br><br>
+            <button class="button-create" onclick="App.RegisterVoter()">Register Voter</button>
+          </div>
+        </section>
+      </section>
+      <section>
+        <h2>Ban Voter</h2>
+        <section id="header-container">
+          <br></br>
+          <div>
+            <label>Address:</label><br>
+            <input type="text" id="voter_ban_address" style="min-width: 350px;" value="">
+            <br><br>
+            <button class="button-create" onclick="App.BanVoter()">Ban Voter</button>
+          </div>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/notify.min.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/App.js"></script>
+</body>
+
+</html>
